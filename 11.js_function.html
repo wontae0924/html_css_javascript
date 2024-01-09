@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js function</title>
+  <script>
+    function basicFunction(){
+      alert("함수 호출 완료");
+    }
+    function basicFunction2(){
+      alert(makeString1());
+    }
+    function makeString1(){
+      return "함수 호출 완료"
+    }
+    const makeString2 = function(){return "hello world"}
+    const makeString3 = () => "hello world"
+    const basicFunction3 = (name = 'guest') =>{
+      alert("hello " + name);
+    }
+    const basicFunction4 = (a,b) =>{
+      alert(a+b);
+    }
+    const basicFunction5 = (...numbers) =>{
+      const total = numbers.reduce((a,b)=>a+b,0);
+      // let total = 0;
+      // for(i=0; i<numbers.length;i++){
+      //   total += numbers[i];
+      // }
+      alert("합계" + total);
+    }
+    
+  </script>
+</head>
+<body>
+  <h2>js 기본 함수 호출</h2>
+  <button onclick="basicFunction()">함수 호출1</button>
+  <button onclick="basicFunction2()">함수 호출2</button>
+  <button onclick="basicFunction3()">함수 호출3</button>
+  <button onclick="basicFunction4(5,6)">함수 호출4</button>
+  <button onclick="basicFunction5(10,20,30,40)">함수 호출5</button>
+
+  <h2>계산기 프로그램</h2>
+  <div>
+    <label>사칙연산선택</label>
+    <select id="calculator">
+    <option value="plus">+</option>
+    <option value="minus">-</option>
+    <option value="mul">*</option>
+    <option value="div">/</option>
+  </select>
+  <input type="text" class="values">
+  <input type="text" class="values">
+</div>
+  <button onclick="calculator()">계산하기 </button>
+  <p id="result"></p>
+  <script>
+    const calculator = () => {
+      const what = document.getElementById("calculator").value;
+      let values = document.getElementsByClassName("values");
+      let values1 = Number(values[0].value);
+      let values2 = Number(values[1].value);
+       if(what === 'plus'){
+        alert(values1 + values2);
+       }else if(what === 'minus'){
+        alert(values1 - values2);
+       }else if(what === 'mul'){
+        alert(values1 * values2);
+       }else if(what === 'div'){
+        alert(values1 / values2);
+      }
+      document.getElementById('result').innerHTML = total;
+    }
+  </script>
+</body>
+</html>

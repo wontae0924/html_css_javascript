@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts/1',
+        type: 'GET',
+        dataType: 'json',
+        success: function (response) {
+          $.ajax({
+            url: 'https://naver.com',
+            method: 'POST',
+            dataType: 'json',
+            data: response,
+            success: function (response3) {
+              $.ajax({
+                url: 'https://naver.com',
+                method: 'POST',
+                dataType: 'json',
+                data: response3,
+                success: function (response3) {
+                  console.log(response3);
+
+                },
+                error: function () {
+                }
+              })
+
+            },
+            error: function () {
+            }
+          })
+        },
+        error: function () {
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

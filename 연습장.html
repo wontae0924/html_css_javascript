@@ -1,0 +1,26 @@
+// index.js
+const printNumbers = {
+    phrase: "The current value is",
+    numbers: [1, 2, 3, 4],
+    loop(){ // ==> changes made
+        this.numbers.forEach((number) => {
+            console.log(this.phrase, number)
+        })
+    }
+}
+
+printNumbers.loop();
+
+
+// index.js
+const printNumbers = {
+    phrase: "The current value is",
+    numbers: [1, 2, 3, 4],
+    loop: () => {
+        this.numbers.forEach((number) => {
+            console.log(this.phrase, number)
+        })
+    }
+}
+
+printNumbers.loop();

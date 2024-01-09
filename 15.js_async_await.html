@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      async function callBackImp() {
+        try{
+          const response1 = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+          console.log("axios");
+          console.log(response1.data.body)
+        }
+        catch(e){
+          console.log(e);
+        }
+        // try{
+        //   const response1 = await $.ajax({
+        //   url: 'https://jsonplaceholder.typicode.com/posts/1',
+        //   type: 'GET',
+        //   dataType: 'json',
+        // });
+        // console.log(response1);
+        // }catch(e){
+        //   console.log(e);
+        // }
+        // const response2 = await $.ajax({
+        //   url: 'https://naver.com',
+        //   method: 'POST',
+        //   dataType: 'json',
+        //   data: response1,
+        // });
+        // console.log(response2);
+        // const response3 = await $.ajax({
+        //   url: 'https://daum.com',
+        //   method: 'POST',
+        //   dataType: 'json',
+        //   data: response2,
+        // });
+        // console.log(response3);
+      }
+      callBackImp();
+    </script>
+  </body>
+
+  </html>
+</body>
+
+</html>

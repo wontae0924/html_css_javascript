@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js basic</title>
+  <script>
+    function showObject(){
+      //리터럴방식
+      var person = {name:"hong",age:20,email:"hong@naver.com"};
+      person.name = "kim";
+      person.password = "1234";
+      var str = "이름은" + person.name + "나이는" + person.age;
+      document.getElementById("result").innerHTML = str;
+    }
+    function convertType(){
+      // 숫자클래스 : Number, 문자 클래스 : String, 참 거짓 : boolean
+      var numStr = "10";
+      var str = "문자열";
+      var output = 
+      "Number 변환 : " + Number(numStr) + "<br>"
+      + "String 변환 : " + String(10) + "<br>"
+      +"Boolean 변환 : " + Boolean(0) + "<br>"
+      document.getElementById("result").innerHTML = output;                
+    }
+    function showNull(){
+      var output1;
+      var output2 = null;
+      var output =
+      "output1 타입 : "+  (typeof output1) + "<br>"
+      +"output2 타입 : " +  (typeof output2) + "<br>"
+      +"output1 == output2" + (output1 == output2)  + "<br>"
+      +"output1 === output2" + (output1 === output2)  + "<br>"
+
+    }
+    function showDateConversion(){
+      var date = new Date();
+      var date_num = date.getDate();
+      var date_str = date.toString();
+      document.getElementById("result").innerHTML = date_num;
+    }
+  </script>
+</head>
+<body>
+  <h2>js 객체</h2>
+  <button onclick="showObject()">객체생성</button>
+  <button onclick="convertType()">형변환</button>
+  <button onclick="showNull()">unfiend</button>
+  <button onclick="showDateConversion()">1</button>
+  <p id="result"></p>
+</body>
+</html>
